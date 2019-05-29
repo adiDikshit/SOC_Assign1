@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Own Website</title>
+    </head>
+    <body>
+        <center>
+        <div>
+            <h1>Browser-Modifiable Adaptable Window </h1>
+            <h3>Type your Own Website</h2>
+            <form >
+                <input type="text" id="t1">
+                <input type="button" value="GO" id="b1" onclick="go()">
+            </form>
+        </div><br>
+        <iframe id="if1" height="500" width="1000">
+        </iframe>
+        </center>
+    </body>
+    <script>
+        function go(){
+            var ifr=document.getElementById("if1");
+            ifr.setAttribute("src",document.getElementById("t1").value);
+
+        }
+    </script>
+
+</html>
