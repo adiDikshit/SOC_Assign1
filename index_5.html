@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Resizable Iframe</title>
+    </head>
+    <body>
+        <center>
+        <div>
+            <h2>Resizeable Browser-Modifiable Window</h2><br>
+            <form id="f1">
+                Width:<input type="text" id="tf1"><br><br>
+                Height:<input type="text" id="tf2"><br><br>
+                <input type="button" id="b1" name="GO" value="GO" onclick=go()>
+            </form>
+        </div><br><hr>
+        <iframe src="http://wikipedia.org" name="iframe" id="if1" height="400" width="800"></iframe>
+        </center>
+    </body>
+    <script>
+        function go(){
+            var ifr=document.getElementById("if1");
+            ifr.setAttribute("width",document.getElementById("tf1").value);
+            ifr.setAttribute("height",document.getElementById("tf2").value);
+        }
+    </script>
+</html>
