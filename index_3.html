@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Websites</title>
+    </head>
+
+    <body>
+        <center>
+        <div>
+        <h3>Hey guys which one would you like to go to</h3><br><br>
+        <div>
+        <select id="s1" onchange="load(this)">
+            <option> none</option>
+            <option value="https://www.google.com/webhp?igu=1" id="o1" >Google</option>
+            <option value="http://wikipedia.org" id="o2" >Wiki</option>
+            <option value="http://iitk.ac.in" id="o3">IITK</option>
+        </select>
+        </div>
+        </div><br><br>
+        <iframe name="iframename" id="if1" height=500 width=1200 style="border: 2px solid goldenrod">
+        </iframe>
+        </center>
+    </body>
+    <script>
+        function load(sr){
+            document.getElementById("if1").setAttribute("src",sr.value);
+        }
+    </script>
+</html>
