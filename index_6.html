@@ -1,0 +1,43 @@
+<html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <title>
+            Click to Resize
+        </title>
+    </head>
+    <body>
+        <div>
+            <center>
+                <p><h3>Here we can re-size by clicking on the lower right corner of the inner
+                        window and dragging the cursor around</h3>
+                </p><br>
+                <iframe class="adaptable" name="iframe" id="fr1" src="https://www.wikipedia.org" ondrag="apply()" onmousedown="record()" onmouseup="apply()" height="300" width="300" style="border:5px solid gray;"></iframe>
+            </center>
+        </div>
+    </body>
+
+    <script>
+    var x1,y1,flag=0;
+    function record() {
+    x1 = event.clientX;
+    y1 = event.clientY;
+    flag=1;
+    }
+
+    function apply() {
+    if (flag==0) return;
+    var x2 = event.clientX;
+    var y2 = event.clientY;
+    var frame1 = document.getElementById("fr1");
+    var h = parseInt(frame1.getAttribute("height"));
+    var w = parseInt(frame1.getAttribute("width"));
+    frame1.setAttribute("height", h + y2 - y1);
+    frame1.setAttribute("width", w + x2 - x1);
+    flag=0;
+    }
+    </script>
+</html>
